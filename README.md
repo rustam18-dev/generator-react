@@ -1,30 +1,36 @@
-# React + TypeScript + Vite
+# React + TypeScript + Vite + Zustand
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Generator
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#### Основные требования
 
-## Expanding the ESLint configuration
+1. Структура страницы:
+    - Страница делится на две части по горизонтали:
+        - Контроллер (1/4 ширины страницы)
+        - Поле вывода (3/4 ширины страницы)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+2. Элементы интерфейса:
+    - В контроллере должны быть следующие элементы:
+        - Кнопки:
+            - "Набор 1"
+            - "Набор 2"
+            - Расположение: кнопки размещаются в верхней части контроллера.
+        - Кнопка "Сгенерировать":
+            - Состояние: кнопка по умолчанию заблокирована (`disabled`).
+            - Расположение: кнопка размещается в нижней части контроллера.
 
-- Configure the top-level `parserOptions` property like this:
+3. Функциональность:
+    - Отображение карточек:
+        - При нажатии на одну из кнопок "Набор 1" или "Набор 2", в поле вывода должно отображаться соответствующее количество карточек:
+            - Набор 1: 4 карточки
+            - Набор 2: 5 карточек
+    - Особенности карточек:
+        - Каждая карточка имеет уникальную картинку, связанную с выбранным набором.
+        - Пользователь может выбрать от 2 до максимального количества карточек в наборе.
+    - Выбор карточек:
+        - При нажатии на карточку, ее копия добавляется в нижнюю строку карточек, а сама карточка становится недоступной для выбора (`disabled`).
+        - Если пользователь передумал, он может нажать на карточку в нижнем списке, чтобы она исчезла, а оригинальная карточка снова стала доступной для выбора.
+    - 
+Ссылка на дизайн задания - <a href="https://www.figma.com/design/roIv4xYudBeLDRJP14Agxv/Untitled?node-id=0-1&node-type=canvas&t=ct4TquQpwpghv4NP-0">тык</a>
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
