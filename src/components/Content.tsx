@@ -4,6 +4,7 @@ import {useEffect, useState} from "react"
 import {ICard} from "../types/types.ts"
 import {Preview} from "./Preview.tsx"
 
+
 export const Content = () => {
   const firstSet = useCardStore(state => state.firstSet)
   const previews = useCardStore(state => state.previews)
