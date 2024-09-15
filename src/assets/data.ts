@@ -1,6 +1,6 @@
 import {ICard} from "../types/types.ts";
 
-export const firstSetOfCards: ICard[] = [
+export const firstCardsData: ICard[] = [
   {
     id: 1,
     img: 'src/assets/image/nature1.jpg',
@@ -28,7 +28,7 @@ export const firstSetOfCards: ICard[] = [
   }
 ]
 
-export const secondSetOfCards: ICard[] = [
+export const secondCardsData: ICard[] = [
   {
     id: 5,
     img: 'src/assets/image/cat1.png',
