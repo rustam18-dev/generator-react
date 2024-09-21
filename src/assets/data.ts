@@ -22,7 +22,7 @@ export const firstCardsData: ICard[] = [
     alt: "default"
   },
   {
-    id: 9,
+    id: 5,
     img: 'src/assets/image/nature5.jpg',
     alt: "default"
   }
@@ -30,22 +30,22 @@ export const firstCardsData: ICard[] = [
 
 export const secondCardsData: ICard[] = [
   {
-    id: 5,
+    id: 6,
     img: 'src/assets/image/cat1.png',
     alt: 'cat1',
   },
   {
-    id: 6,
+    id: 7,
     img: 'src/assets/image/cat2.png',
     alt: 'cat2',
   },
   {
-    id: 7,
+    id: 8,
     img: 'src/assets/image/cat3.png',
     alt: 'cat3',
   },
   {
-    id: 8,
+    id: 9,
     img: 'src/assets/image/cat4.png',
     alt: 'cat4',
   }
