@@ -4,7 +4,7 @@ import { ICard } from "../types/types.ts";
 import { firstCardsData, secondCardsData } from "../assets/data.ts";
 
 export const useCards = () => {
-  const previews = useCardStore((state) => state.previews);
+  const { previews } = useCardStore();
   const [firstCards, setFirstCards] = useState<ICard[]>(firstCardsData);
   const [secondCards, setSecondCards] = useState<ICard[]>(secondCardsData);
 

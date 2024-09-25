@@ -3,15 +3,14 @@ import { useSerialNumber } from "../hooks/useSerialNumber.ts";
 import { useCardStore } from "../store";
 
 export const Card = ({ id, selected, alt, img }: ICard) => {
-  const previews = useCardStore((state) => state.previews);
-  const addToPreviews = useCardStore((state) => state.addToPreviews);
+  const { addToPreviews, previews } = useCardStore();
 
   return (
     <div
       key={id}
       onClick={() => addToPreviews(id)}
       className={`relative w-[300px] h-[300px] flex items-center justify-center cursor-pointer group ${
-        selected ? 'darkened' : ''
+        selected ? "darkened" : ""
       }`}
     >
       <img src={img} alt={alt} className='w-full h-full object-cover' />

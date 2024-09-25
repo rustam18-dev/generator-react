@@ -1,34 +1,22 @@
 import { useCardStore } from "../store";
-import { ICard } from "../types/types.ts";
 import { Preview } from "./Preview.tsx";
 import { useCards } from "../hooks/useCards.ts";
 import { Card } from "./Card.tsx";
 
 export const Content = () => {
-  const isFirstSetActive = useCardStore((state) => state.firstSet);
+  const { firstSet: isFirstSetActive } = useCardStore();
+
   const { firstCards, secondCards } = useCards();
 
   return (
     <div className='flex flex-col justify-between w-full'>
       <div className='p-7 flex gap-[30px] flex-wrap overflow-auto'>
         {isFirstSetActive ?
-          firstCards.map((card: ICard) => (
-            <Card
-              key={card.id}
-              id={card.id}
-              img={card.img}
-              alt={card.alt}
-              selected={card.selected}
-            />
+          firstCards.map(({ id, selected, alt, img }) => (
+            <Card key={id} id={id} img={img} alt={alt} selected={selected} />
           ))
-        : secondCards.map((card: ICard) => (
-            <Card
-              key={card.id}
-              id={card.id}
-              img={card.img}
-              alt={card.alt}
-              selected={card.selected}
-            />
+        : secondCards.map(({ id, selected, alt, img }) => (
+            <Card key={id} id={id} img={img} alt={alt} selected={selected} />
           ))
         }
       </div>

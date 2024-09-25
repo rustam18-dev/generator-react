@@ -1,8 +1,7 @@
 import { useCardStore } from "../store";
 
 export const Preview = () => {
-  const removeFromPreviews = useCardStore((state) => state.removeFromPreviews);
-  const previews = useCardStore((state) => state.previews);
+  const { previews, removeFromPreviews } = useCardStore();
 
   return (
     <>
